@@ -1,49 +1,49 @@
-# Yapılacaklar Listesi
+# To-Do List
 
-Bu proje, kullanıcıların görevlerini kolayca yönetebileceği bir yapılacaklar listesi uygulamasıdır. Görevler eklenebilir, tamamlanmış olarak işaretlenebilir ve istenirse silinebilir.
+This project is a to-do list application where users can easily manage their tasks. Tasks can be added, marked as completed, and deleted if desired.
 
-## Özellikler
+## Features
 
-- Yeni görevler ekleyebilme.
-- Görevleri tamamlandığı zaman üstü çizili hale getirme.
-- Görevleri listeden silme.
-- Kullanıcı dostu, basit bir arayüz.
+- Ability to add new tasks.
+- Mark tasks as completed by striking through them.
+- Delete tasks from the list.
+- User-friendly, simple interface.
 
-## Kullanım
+## Usage
 
-1. Projeyi bir HTML dosyası olarak kaydedin ve tarayıcınızda açın.
-2. "Yeni görev ekleyin" giriş alanına görev adı yazın ve "Ekle" butonuna tıklayın ya da Enter tuşuna basın.
-3. Listede görünen her görevi tamamlanmış olarak işaretlemek için üstüne tıklayabilirsiniz.
-4. Görevi silmek için, görev adının yanında bulunan "Sil" butonuna tıklayın.
+1. Save the project as an HTML file and open it in your browser.
+2. Write the task name in the "Add new task" input field and click the "Add" button or press the Enter key.
+3. You can mark each task in the list as completed by clicking on it.
+4. To delete a task, click the "Delete" button next to the task name.
 
-## Dosyalar
+## Files
 
-- `index.html`: HTML ve JavaScript kodlarını içeren ana dosyadır.
-- `stil.css`: Stil kodlarını içeren css dosyasıdır.
+- `index.html`: The main file containing HTML and JavaScript code.
+- `style.css`: The CSS file containing style codes.
 
-## Nasıl Çalışır?
+## How It Works
 
-- Kullanıcı, giriş alanına yeni bir görev yazar ve "Ekle" butonuna basar veya klavyeden `Enter` tuşuna basar.
-- Girilen görev, yapılacaklar listesine eklenir ve görevle birlikte bir "Sil" butonu da oluşturulur.
-- Kullanıcı görevlerin üstüne tıkladığında görev tamamlanmış sayılır ve üzeri çizilir. Tekrar tıklandığında görev tamamlanmamış duruma geri döner.
-- "Sil" butonuna basıldığında görev listeden kaldırılır.
+- The user writes a new task in the input field and clicks the "Add" button or presses the `Enter` key on the keyboard.
+- The entered task is added to the to-do list, and a "Delete" button is created along with the task.
+- When the user clicks on the tasks, the task is considered completed and is struck through. Clicking again will revert the task to an incomplete state.
+- When the "Delete" button is clicked, the task is removed from the list.
 
-## Örnek
+## Example
 
 ```html
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./stil.css" />
-    <title>Yapılacaklar Listesi</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>To-Do List</title>
 </head>
 <body>
-    <h1>Yapılacaklar Listesi</h1>
+    <h1>To-Do List</h1>
     <div>
-        <input type="text" id="taskInput" placeholder="Yeni görev ekleyin" onkeypress="handleKeyPress(event)">
-        <button onclick="addTask()">Ekle</button>
+        <input type="text" id="taskInput" placeholder="Add new task" onkeypress="handleKeyPress(event)">
+        <button onclick="addTask()">Add</button>
     </div>
     <ul id="taskList"></ul>
 
@@ -53,7 +53,7 @@ Bu proje, kullanıcıların görevlerini kolayca yönetebileceği bir yapılacak
             const task = taskInput.value.trim();
 
             if (task === "") {
-                alert("Lütfen bir görev girin.");
+                alert("Please enter a task.");
                 return;
             }
 
@@ -65,7 +65,7 @@ Bu proje, kullanıcıların görevlerini kolayca yönetebileceği bir yapılacak
             };
 
             const deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "Sil";
+            deleteBtn.textContent = "Delete";
             deleteBtn.className = "delete-btn";
             deleteBtn.onclick = function(event) {
                 event.stopPropagation();
@@ -87,10 +87,10 @@ Bu proje, kullanıcıların görevlerini kolayca yönetebileceği bir yapılacak
 </html>
 ```
 
-## Katkıda Bulunma
+## Contributing
 
-Her türlü katkı ve geri bildirim memnuniyetle karşılanır. Pull request gönderebilir ya da issue açabilirsiniz.
+Any contributions and feedback are welcome. You can send a pull request or open an issue.
 
-## Lisans
+## License
 
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+This project is licensed under the [MIT License](LICENSE).
